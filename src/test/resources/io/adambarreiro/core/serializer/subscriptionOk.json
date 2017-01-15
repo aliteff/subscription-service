@@ -1,0 +1,8 @@
+{
+  "newsletterId": 1,
+  "email": "adam@mail.com",
+  "dateOfBirth": "1990-09-14",
+  "consent": true,
+  "firstName": "Adam",
+  "gender": "M"
+}
