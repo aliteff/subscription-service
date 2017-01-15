@@ -10,29 +10,29 @@ The Email service can send e-mails given an specific event, that is, this servic
 # Usage
 * Download the repository in any folder of your choice with Git:
 
-`git clone https://github.com/adambarreiro/Polynomial.git`
+`git clone https://github.com/adambarreiro/subscription-service.git`
 
 * Build the application with Gradle:
 
-`gradle clean build`
+`gradle build`
 
 * Execute the Spring Boot embedded server with the application:
 
-`java -jar subscriptions-api-0.1.0.jar`
+`java -jar build/lib/subscriptions-api-0.1.0-SNAPSHOT.jar`
 
 # API specification
 
-* PUT /subscription
+* `PUT /subscription`
 
-JSON: { newsletterId: Number, email: String, dateOfBirth: String(YYYY-MM-DD), consent: Boolean, firstName: String(Optional), gender: String(Optional) }
+JSON: `{ newsletterId: Number, email: String, dateOfBirth: String(YYYY-MM-DD), consent: Boolean, firstName: String(Optional), gender: String(Optional) }`
 
-* POST /email
+* `POST /email`
 
-JSON: {email: String }
+JSON: `{email: String }`
 
-* GET /event
+* `GET /event`
 
-JSON: {newsletterId: Number }
+JSON: `{newsletterId: Number }`
 
 # Tech stack
 
