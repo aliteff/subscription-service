@@ -20,13 +20,13 @@ The Email service can send e-mails given an specific event, that is, this servic
 * Execute the Spring Boot embedded server with the application:
 
 ```
-cd build/lib
+cd build/libs
 java -jar subscriptions-api-0.1.0-SNAPSHOT.jar
 ```
 
 ## API specification
 
-* `PUT /subscription`
+* `POST /subscription`
  
 ```
 {
@@ -46,13 +46,9 @@ java -jar subscriptions-api-0.1.0-SNAPSHOT.jar
 }
 ```
 
-* `GET /event`
+* `GET /event/{newsletterId}`
 
-```
-{
-  newsletterId: Number
-}
-```
+`newsletterId: Number`
 
 ## Tech stack
 
