@@ -4,7 +4,7 @@ This challenge consists of three services: Subscription service, Email service a
 
 An anonymous user can consume the Subscription service by creating subscriptions to events that are identified by a newsletterId. These subscriptions also need a valid e-mail and some other data.
 
-The Event and Email service are private, the user must be authenticated in order to use them. The Event service allows the user to retrieve some events by their newsletterId.
+The Event and Email service are private, the calls to the API must be signed to assure they come from a trusted source. The Event service allows the user to retrieve some events by their newsletterId.
 
 The Email service can send e-mails given an specific event, that is, this service searches for subscriptions related to the event and mails the users who are subscribed to that event.
 
