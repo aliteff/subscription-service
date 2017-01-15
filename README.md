@@ -1,4 +1,5 @@
 # Coding Challenge
+## Description
 This challenge consists of three services: Subscription service, Email service and Event service.
 
 An anonymous user can consume the Subscription service by creating subscriptions to events that are identified by a newsletterId. These subscriptions also need a valid e-mail and some other data.
@@ -7,7 +8,7 @@ The Event and Email service are private, the user must be authenticated in order
 
 The Email service can send e-mails given an specific event, that is, this service searches for subscriptions related to the event and mails the users who are subscribed to that event.
 
-# Usage
+## Usage
 * Download the repository in any folder of your choice with Git:
 
 `git clone https://github.com/adambarreiro/subscription-service.git`
@@ -20,7 +21,7 @@ The Email service can send e-mails given an specific event, that is, this servic
 
 `java -jar build/lib/subscriptions-api-0.1.0-SNAPSHOT.jar`
 
-# API specification
+## API specification
 
 * `PUT /subscription`
 
@@ -34,7 +35,7 @@ JSON: `{email: String }`
 
 JSON: `{newsletterId: Number }`
 
-# Tech stack
+## Tech stack
 
 * Gradle: Modern build tool. Unlike others like Maven, Gradle is more flexible as it allows custom scripts as well as a wide variety of plugins. It's ALM is not such "Convention over Configuration" as Maven.
 * H2: It's an in-memory database for testing purposes. Here is used to make a stub of the real database used by the services.
@@ -43,7 +44,7 @@ JSON: `{newsletterId: Number }`
 * Spring Data: Framework for developing database access and data consumption with ease and with a light configuration.
 * Spring Security: Framework to make the services secure, supporting a wide variety of authentication paradigms such web tokens, cookies, etc. It also provides a full common-attack prevention, such as CSRF attacks or CORS.
 
-# References
+## References
 * [Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/)
 * [Securing Spring Boot APIs](https://www.future-processing.pl/blog/exploring-spring-boot-and-spring-security-custom-token-based-authentication-of-rest-services-with-spring-security-and-pinch-of-spring-java-configuration-and-spring-integration-testing/)
 
