@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.adambarreiro.email.entity.Email;
@@ -42,14 +44,20 @@ public class EmailController {
 	 * @return
 	 */
     @RequestMapping(method=RequestMethod.POST)
-    public boolean send(@RequestBody Email email) {
+    public @ResponseBody ResponseEntity<String> send(@RequestBody Email email) {
     	List<Subscription> subscriptions = subscriptionService.getSubscriptions(email.getEmail());
     	List<Event> events = new ArrayList<Event>();
     	for (Subscription subscription : subscriptions) {
     		Event event = eventService.getEvent(subscription.getNewsletterId());
     		events.add(event);
     	}
-    	return emailService.send(email.getEmail(), events);
+    	boolean sent = emailService.send(email.getEmail(), events);
+    	if (sent) {
+    		return ResponseEntity.ok("{\"mailSent\": true}");
+    	} else {
+    		return ResponseEntity.ok("{\"mailSent\": false}");
+    	}
+    	
 
     }
     
