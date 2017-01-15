@@ -19,13 +19,16 @@ The Email service can send e-mails given an specific event, that is, this servic
 
 * Execute the Spring Boot embedded server with the application:
 
-`java -jar build/lib/subscriptions-api-0.1.0-SNAPSHOT.jar`
+``
+cd build/lib
+java -jar subscriptions-api-0.1.0-SNAPSHOT.jar
+``
 
 ## API specification
 
 * `PUT /subscription`
 
-JSON: `{ newsletterId: Number, email: String, dateOfBirth: String(YYYY-MM-DD), consent: Boolean, firstName: String(Optional), gender: String(Optional) }`
+JSON: ``{ newsletterId: Number, email: String, dateOfBirth: String(YYYY-MM-DD), consent: Boolean, firstName: String(Optional), gender: String(Optional) }`
 
 * `POST /email`
 
@@ -43,6 +46,16 @@ JSON: `{newsletterId: Number }`
 * Spring Boot: Framework for developing and deploying services fast and with a light and concise configuration.
 * Spring Data: Framework for developing database access and data consumption with ease and with a light configuration.
 * Spring Security: Framework to make the services secure, supporting a wide variety of authentication paradigms such web tokens, cookies, etc. It also provides a full common-attack prevention, such as CSRF attacks or CORS.
+
+## TODO
+* Data input validation for the REST Controllers (mail, date, etc)
+* Move the validation to appropiate filters.
+* Authentication
+* Send real emails (now it's a stub)
+
+## FIXES
+* Loading context error when starting Spring Boot test due to JPA repositories not finding the EntityManager bean.
+
 
 ## References
 * [Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/)
